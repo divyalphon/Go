@@ -17,7 +17,7 @@ func init() {
 	cluster.ProtoVersion = 4
 	cluster.Consistency = gocql.Quorum
 
-	cluster.Keyspace = "gotud"
+	cluster.Keyspace = "keyspacename"
 
 	cluster.Authenticator = gocql.PasswordAuthenticator{Username: "username", Password: "password"}
 
