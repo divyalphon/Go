@@ -1,0 +1,95 @@
+OracleToGo 
+First you need to have sql developer installed and connect to database ,up and running.
+Write your go code
+you need to oracle client to be installed in your system
+Steps for installing oracle client:
+Download the files 
+instantclient-basic-macos.x64-12.1.0.2.0.zip
+instantclient-sdk-macos.x64-12.1.0.2.0.zip
+instantclient-sqlplus-macos.x64-12.1.0.2.0.zip
+
+from oracle website  https://oracle.github.io/odpi/doc/installation.html#macos for help
+
+Steps followed in my system:
+
+i created a folder called Oracle in path :    /Users/divya.p/Documents/  final after creating 
+/Users/divya.p/Documents/Oracle
+Downloaded the above  three zip files under path /Users/divya.p/Documents/Oracle
+instantclient-basic-macos.x64-12.1.0.2.0.zip
+instantclient-sdk-macos.x64-12.1.0.2.0.zip
+instantclient-sqlplus-macos.x64-12.1.0.2.0.zip
+And in the same path : /Users/divya.p/Documents/Oracle created a folder called as
+instantclient_12_1  ,/Users/divya.p/Documents/Oracle/instantclient_12_1
+Inside this folder /Users/divya.p/Documents/Oracle/instantclient_12_1 , i pasted all other three zip files contents all.
+I think this is optional of creating oci8.pc  under this same same path: /Users/divya.p/Documents/Oracle/instantclient_12_1
+contents of oci8.pc    ===
+
+prefixdir=/Oracle/instantclient_12_1/sdk
+libdir=${prefixdir}
+includedir=${prefixdir}/include
+   
+Name: OCI
+Description: Oracle database driver
+Version: 11.2
+Libs: -L${libdir} -lclntsh
+Cflags: -I${includedir}
+
+After this you have to set path :LD_LIBRARY_PATH=/Users/divya.p/Documents/Oracle/instantclient_12_1 in .bash_profile
+
+
+
+My .bash_profile contents are 
+
+
+
+export GOPATH=/Users/divya.p/Documents/November_15_2018
+export PATH=$PATH:$GOPATH/bin
+#export PATH=$PATH:/Users/divya.p/Documents/vault
+
+
+export PATH=$PATH:/Users/divya.p/Documents/November_15_2018/bin
+#export JAVA/Library/Java/JavaVirtualMachines/jdk1.8.0_171.jdk/Contents/Home 
+#export PATH = $PATH:$JAVA_HOME/bin
+
+
+
+#PKG_CONFIG_PATH=/Users/divya.p/Documents/Oracle/instantclient_12_1
+LD_LIBRARY_PATH=/Users/divya.p/Documents/Oracle/instantclient_12_1
+
+
+======
+
+
+
+important links:
+http://databasequest.blogspot.com/2016/10/creating-oracle-connection-from-golang.html
+
+Important:
+
+It is not set in bash_profile ,so we have to export path every time we are the thr program in the present working directory.
+
+ export LD_LIBRARY_PATH=/Users/divya.p/Documents/Oracle/instantclient_12_1
+
+ contents of bash_profile
+
+ --------
+export  GOPATH=/Users/divya.p/Documents/November_15_2018
+#export  GOPATH=/Users/divya.p/Documents/Go_Workspace
+export PATH=$PATH:$GOPATH/bin
+#export PATH=$PATH:/Users/divya.p/Documents/vault
+
+
+#export PATH=$PATH:/Users/divya.p/Documents/November_15_2018/bin
+#export PATH=$PATH:/Users/divya.p/Documents/Go_Workspace/bin
+#export JAVA/Library/Java/JavaVirtualMachines/jdk1.8.0_171.jdk/Contents/Home 
+#export PATH = $PATH:$JAVA_HOME/bin
+
+
+
+PKG_CONFIG_PATH=/Users/divya.p/Documents/Oracle/instantclient_12_1
+export LD_LIBRARY_PATH=/Users/divya.p/Documents/Oracle/instantclient_12_1
+
+
+#/Users/divya.p/Documents/Go_Workspace/src/Testingfolder/basic_programs
+
+ ------
